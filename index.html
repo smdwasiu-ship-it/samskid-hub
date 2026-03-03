@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Lord Samskid Digital Services</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;500;700&display=swap" rel="stylesheet">
+<script src="https://js.paystack.co/v1/inline.js"></script>
+
+<style>
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:'Inter',sans-serif;
+}
+
+body{
+background:#0b0f1a;
+color:white;
+}
+
+header{
+display:flex;
+align-items:center;
+padding:20px 40px;
+gap:20px;
+}
+
+.menu-btn{
+font-size:24px;
+cursor:pointer;
+color:#00f5d4;
+}
+
+.logo{
+font-weight:bold;
+font-size:22px;
+color:#00f5d4;
+}
+
+.hero{
+text-align:center;
+padding:60px 20px;
+}
+
+.hero h1{
+font-size:40px;
+background:linear-gradient(90deg,#00f5d4,#4cc9f0);
+-webkit-background-clip:text;
+color:transparent;
+}
+
+.hero p{
+color:#94a3b8;
+margin-top:10px;
+}
+
+.search-section{
+padding:0 40px 20px 40px;
+}
+
+.search-section input{
+width:100%;
+padding:12px;
+border-radius:10px;
+border:none;
+outline:none;
+}
+
+.side-menu{
+position:fixed;
+top:0;
+left:-260px;
+width:250px;
+height:100%;
+background:#111827;
+padding:30px;
+transition:0.4s;
+z-index:999;
+}
+
+.side-menu a{
+display:block;
+margin:15px 0;
+text-decoration:none;
+color:white;
+}
+
+.close-btn{
+font-size:20px;
+cursor:pointer;
+margin-bottom:20px;
+}
+
+.container{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+gap:25px;
+padding:40px;
+}
+
+.card{
+background:linear-gradient(145deg,#111827,#1f2937);
+border-radius:20px;
+padding:20px;
+transition:0.4s;
+}
+
+.card:hover{
+transform:translateY(-8px);
+box-shadow:0 20px 40px rgba(0,0,0,0.6);
+}
+
+.platform{
+font-size:14px;
+color:#00f5d4;
+}
+
+.price{
+font-size:20px;
+margin:10px 0;
+font-weight:bold;
+}
+
+.service-details{
+font-size:13px;
+color:#94a3b8;
+margin-top:6px;
+}
+
+button{
+width:100%;
+padding:12px;
+border:none;
+border-radius:12px;
+background:linear-gradient(90deg,#00f5d4,#4cc9f0);
+color:black;
+font-weight:bold;
+cursor:pointer;
+margin-top:10px;
+}
+
+.floating-whatsapp{
+position:fixed;
+bottom:20px;
+right:20px;
+background:#25D366;
+padding:15px;
+border-radius:50%;
+font-size:20px;
+text-decoration:none;
+color:white;
+}
+
+footer{
+text-align:center;
+padding:20px;
+color:#64748b;
+}
+
+@media(max-width:768px){
+.hero h1{font-size:26px;}
+.container{padding:20px;}
+}
+</style>
+</head>
+
+<body>
+
+<header>
+<div class="menu-btn" onclick="openMenu()">☰</div>
+<div class="logo">⚡ Lord Samskid Digital Services</div>
+</header>
+
+<div id="sideMenu" class="side-menu">
+<div class="close-btn" onclick="closeMenu()">✖</div>
+<a href="#">Instagram Services</a>
+<a href="#">TikTok Services</a>
+<a href="#">Facebook Services</a>
+<a href="#">Privacy & Security</a>
+</div>
+
+<div class="search-section">
+<input type="text" id="searchInput" placeholder="Search services...">
+</div>
+
+<section class="hero">
+<h1>Grow & Secure Your Brand 🚀</h1>
+<p>Professional • Safe • Trusted</p>
+</section>
+
+<div class="container">
+
+<div class="card">
+<div class="platform">Facebook</div>
+<h2>Page Creation & Branding</h2>
+<div class="service-details">What we need: Business name, logo, niche</div>
+<div class="price">₦12,000</div>
+<button onclick="payWithPaystack(12000)">Pay Now</button>
+</div>
+
+<div class="card">
+<div class="platform">TikTok</div>
+<h2>Profile Optimization</h2>
+<div class="service-details">What we need: Profile link, target audience</div>
+<div class="price">₦15,000</div>
+<button onclick="payWithPaystack(15000)">Pay Now</button>
+</div>
+
+<div class="card">
+<div class="platform">Instagram</div>
+<h2>Account Growth Strategy Plan</h2>
+<div class="service-details">What we need: Username, niche, goals</div>
+<div class="price">₦7,000</div>
+<button onclick="payWithPaystack(7000)">Pay Now</button>
+</div>
+
+<div class="card">
+<div class="platform">TikTok</div>
+<h2>20K Reach Campaign Setup</h2>
+<div class="service-details">What we need: Content link, campaign goal</div>
+<div class="price">₦45,000</div>
+<button onclick="payWithPaystack(45000)">Pay Now</button>
+</div>
+
+<div class="card">
+<div class="platform">VPN Support</div>
+<h2>VPN Installation & Setup Assistance</h2>
+<div class="service-details">We guide you to install & configure safely</div>
+<div class="price">₦3,000</div>
+<button onclick="payWithPaystack(3000)">Pay Now</button>
+</div>
+
+<div class="card">
+<div class="platform">Online Privacy</div>
+<h2>Account Verification Guidance</h2>
+<div class="service-details">Step-by-step legal verification help</div>
+<div class="price">₦4,000</div>
+<button onclick="payWithPaystack(4000)">Pay Now</button>
+</div>
+
+</div>
+
+<footer>© 2026 Lord Samskid Digital Services</footer>
+
+<a href="https://wa.me/2348083493802" class="floating-whatsapp">💬</a>
+
+<script>
+function openMenu(){
+document.getElementById("sideMenu").style.left="0";
+}
+
+function closeMenu(){
+document.getElementById("sideMenu").style.left="-260px";
+}
+
+document.getElementById("searchInput").addEventListener("keyup",function(){
+let value=this.value.toLowerCase();
+let cards=document.querySelectorAll(".card");
+cards.forEach(function(card){
+card.style.display=card.innerText.toLowerCase().includes(value)?"block":"none";
+});
+});
+
+function payWithPaystack(amount){
+var handler=PaystackPop.setup({
+key:'pk_live_58ae5cfcaa38d28d7aab7f88e016670b8f5fa9a9',
+email:'customer@email.com',
+amount:amount*100,
+currency:'NGN',
+callback:function(response){
+alert('Payment successful! Reference: '+response.reference);
+},
+onClose:function(){
+alert('Transaction cancelled');
+}
+});
+handler.openIframe();
+}
+</script>
+
+</body>
+</html>
